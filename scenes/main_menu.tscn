@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://buhvmcvmrigep"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_113sg"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_113sg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.5
+offset_top = -176.0
+offset_right = 233.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Wizard Adventure"
+
+[node name="PlayButton" type="Button" parent="CanvasLayer"]
+offset_left = 440.0
+offset_top = 440.0
+offset_right = 725.0
+offset_bottom = 503.0
+theme_override_font_sizes/font_size = 40
+text = "Play Game"
+
+[node name="HighscoreLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.501
+anchor_right = 0.5
+anchor_bottom = 0.501
+offset_left = -233.0
+offset_top = -11.648
+offset_right = -19.0
+offset_bottom = 43.352
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Highscore: "
+
+[node name="HighscoreValue" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 234.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_button_pressed"]

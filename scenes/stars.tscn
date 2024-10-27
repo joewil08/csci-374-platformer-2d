@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3rjsqtov8jj1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r4dvx"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_y3itv"]
+offsets = PackedFloat32Array(0, 0.06, 0.673333, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 0.768627, 0.768627, 0.768627, 1, 0, 0, 0, 0)
+
+[node name="Stars" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_r4dvx")
+amount = 5000
+lifetime = 4.0
+speed_scale = 0.8
+emission_shape = 3
+emission_rect_extents = Vector2(30000, 10000)
+gravity = Vector2(15, 0)
+initial_velocity_min = 15.0
+initial_velocity_max = 15.0
+angle_max = 360.0
+scale_amount_max = 15.0
+color_ramp = SubResource("Gradient_y3itv")

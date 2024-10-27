@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjysrrnmq1jto"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a8dwa"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_6xoyn"]
+offsets = PackedFloat32Array(0.0933333, 0.566667, 1)
+colors = PackedColorArray(0.989663, 0.341178, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0)
+
+[node name="Magic" type="Node2D"]
+z_index = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_a8dwa")
+amount = 2000
+lifetime = 0.3
+speed_scale = 0.35
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 86.0
+spread = 21.0
+gravity = Vector2(-3000, 0)
+angular_velocity_min = -515.0
+linear_accel_max = 60.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_6xoyn")
+hue_variation_min = 0.53
+hue_variation_max = 0.53

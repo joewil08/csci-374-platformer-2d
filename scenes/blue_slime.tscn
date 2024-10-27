@@ -1,0 +1,169 @@
+[gd_scene load_steps=36 format=3 uid="uid://bh3yegcr0u1ex"]
+
+[ext_resource type="Script" path="res://scripts/blue_slime.gd" id="1_87fb8"]
+[ext_resource type="Texture2D" uid="uid://bwotvq0iv1bwn" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00000.png" id="1_d42an"]
+[ext_resource type="Texture2D" uid="uid://dlqgmc3ifgu40" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00001.png" id="2_7u1wx"]
+[ext_resource type="Texture2D" uid="uid://dhjtwu5md33gk" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00002.png" id="3_s73rp"]
+[ext_resource type="Texture2D" uid="uid://5ehuir6lghxy" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00003.png" id="4_nyx2f"]
+[ext_resource type="Texture2D" uid="uid://f4wrnhiav0ge" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00004.png" id="5_b2g4q"]
+[ext_resource type="Texture2D" uid="uid://but1flb7x3jpe" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00005.png" id="6_bfupi"]
+[ext_resource type="Texture2D" uid="uid://6ymmva2vfp43" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00006.png" id="7_p77fv"]
+[ext_resource type="Texture2D" uid="uid://deeyh8jknsyb7" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00007.png" id="8_e6vxk"]
+[ext_resource type="Texture2D" uid="uid://dneee3kb051ma" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00008.png" id="9_5tiw6"]
+[ext_resource type="Texture2D" uid="uid://c1ueitw64esto" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00009.png" id="10_whkxj"]
+[ext_resource type="Texture2D" uid="uid://nk8obi28bsxj" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00010.png" id="11_ikdsq"]
+[ext_resource type="Texture2D" uid="uid://t47kbtj0cqt5" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00011.png" id="12_tw86u"]
+[ext_resource type="Texture2D" uid="uid://pl4fgpbf6uak" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00012.png" id="13_rm3r6"]
+[ext_resource type="Texture2D" uid="uid://3xqoee42vcj3" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00013.png" id="14_4wfp6"]
+[ext_resource type="Texture2D" uid="uid://dit5qey2k7nso" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00014.png" id="15_rf4pp"]
+[ext_resource type="Texture2D" uid="uid://c6n42egd3yxgh" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00015.png" id="16_ngpxi"]
+[ext_resource type="Texture2D" uid="uid://b5q1bi4s7n2lm" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00016.png" id="17_w0ds8"]
+[ext_resource type="Texture2D" uid="uid://bkmuoehs306di" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00017.png" id="18_chxd5"]
+[ext_resource type="Texture2D" uid="uid://ch7kfruk75k4w" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00018.png" id="19_s33h3"]
+[ext_resource type="Texture2D" uid="uid://dglt06lumq2dm" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00019.png" id="20_ie1is"]
+[ext_resource type="Texture2D" uid="uid://dge7ujs2a0pn7" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00020.png" id="21_3yix1"]
+[ext_resource type="Texture2D" uid="uid://c02ed16dbwylf" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00021.png" id="22_amy4c"]
+[ext_resource type="Texture2D" uid="uid://b1ymln3gfyubs" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00022.png" id="23_sxqmo"]
+[ext_resource type="Texture2D" uid="uid://v0s7hr63gn5t" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00023.png" id="24_0ieu6"]
+[ext_resource type="Texture2D" uid="uid://d25qq1kkbvkcb" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00024.png" id="25_nfb32"]
+[ext_resource type="Texture2D" uid="uid://cxf4w6lv8uovs" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00025.png" id="26_o55al"]
+[ext_resource type="Texture2D" uid="uid://0sedb117syvq" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00026.png" id="27_dfaat"]
+[ext_resource type="Texture2D" uid="uid://d6a47gswwy16" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00027.png" id="28_pmin8"]
+[ext_resource type="Texture2D" uid="uid://bnc3ff8573iyh" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00028.png" id="29_ogpr1"]
+[ext_resource type="Texture2D" uid="uid://tijlr6ekw2qb" path="res://assets/MossyCavern/SlimeGreen/SlimeBasic_00029.png" id="30_66h4k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxdm3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d42an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7u1wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s73rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nyx2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b2g4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bfupi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p77fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e6vxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5tiw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_whkxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ikdsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tw86u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rm3r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4wfp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rf4pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ngpxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w0ds8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_chxd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_s33h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ie1is")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3yix1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_amy4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sxqmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0ieu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nfb32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_o55al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_dfaat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pmin8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ogpr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_66h4k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 29.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_py5to"]
+radius = 94.0
+height = 242.0
+
+[sub_resource type="Gradient" id="Gradient_shi74"]
+offsets = PackedFloat32Array(0.337662, 0.707792)
+colors = PackedColorArray(0, 0.384314, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w7qtk"]
+gradient = SubResource("Gradient_shi74")
+width = 500
+height = 500
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="BlueSlime" type="CharacterBody2D" groups=["BigEnemyIII"]]
+scale = Vector2(3, 3)
+script = ExtResource("1_87fb8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.341176, 1, 1)
+sprite_frames = SubResource("SpriteFrames_fxdm3")
+autoplay = "default"
+frame_progress = 0.0451603
+
+[node name="Area2D" type="Area2D" parent="." groups=["BigEnemyIII"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_py5to")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_w7qtk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://8mckdfjdy3m3"]
+
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="1_a0c2w"]
+[ext_resource type="Texture2D" uid="uid://pwwd2jvcp477" path="res://assets/MossyCavern/Mossy Tileset/Floating Platform.png" id="1_entqc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7nj1"]
+size = Vector2(432, 336)
+
+[sub_resource type="Animation" id="Animation_pkhe4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_gj8fb"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3was"]
+_data = {
+"RESET": SubResource("Animation_pkhe4"),
+"move": SubResource("Animation_gj8fb")
+}
+
+[node name="MovingPlatform" type="Path2D"]
+script = ExtResource("1_a0c2w")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+z_index = 1
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_entqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_w7nj1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u3was")
+}

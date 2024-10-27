@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://csuwkiex7l0pj"]
+
+[ext_resource type="Texture2D" uid="uid://blfku6gi7q736" path="res://assets/Coin_Gems/MonedaD.png" id="1_01vrj"]
+[ext_resource type="Script" path="res://scripts/coin.gd" id="2_4bn2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f368q"]
+atlas = ExtResource("1_01vrj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbcf8"]
+atlas = ExtResource("1_01vrj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebihg"]
+atlas = ExtResource("1_01vrj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2po0"]
+atlas = ExtResource("1_01vrj")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tutcx"]
+atlas = ExtResource("1_01vrj")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ro68v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f368q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbcf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebihg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2po0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tutcx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhcab"]
+radius = 7.0
+
+[sub_resource type="Gradient" id="Gradient_rt5ah"]
+offsets = PackedFloat32Array(0, 0.681818)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lhl5w"]
+gradient = SubResource("Gradient_rt5ah")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="Coin" type="AnimatedSprite2D"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_ro68v")
+autoplay = "default"
+frame_progress = 0.404591
+script = ExtResource("2_4bn2m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qhcab")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_lhl5w")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emission_shape = 1
+emission_sphere_radius = 13.0
+gravity = Vector2(0, -5)
+scale_amount_max = 4.0
+color = Color(1, 1, 0.317647, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

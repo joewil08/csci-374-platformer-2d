@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://bp7o1xraioc15"]
+
+[ext_resource type="Texture2D" uid="uid://x6pt26m0ari5" path="res://assets/Coin_Gems/spr_coin_strip4.png" id="1_kt0ms"]
+[ext_resource type="Script" path="res://scripts/green_gem.gd" id="2_g2cgw"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f65u6"]
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kauj"]
+atlas = ExtResource("1_kt0ms")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys3sw"]
+atlas = ExtResource("1_kt0ms")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw03p"]
+atlas = ExtResource("1_kt0ms")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb5qk"]
+atlas = ExtResource("1_kt0ms")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_acqem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kauj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys3sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw03p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb5qk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xclf"]
+radius = 5.03333
+height = 16.2667
+
+[sub_resource type="Gradient" id="Gradient_00jcw"]
+offsets = PackedFloat32Array(0, 0.694805)
+colors = PackedColorArray(0.569107, 1, 0.67683, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gi7d2"]
+gradient = SubResource("Gradient_00jcw")
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="GreenGem" type="AnimatedSprite2D"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_f65u6")
+scale = Vector2(30, 30)
+sprite_frames = SubResource("SpriteFrames_acqem")
+autoplay = "default"
+script = ExtResource("2_g2cgw")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_1xclf")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+self_modulate = Color(0.546875, 1, 0.575195, 1)
+amount = 250
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 25.0
+gravity = Vector2(0, -10)
+scale_amount_max = 10.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+enabled = false
+energy = 2.0
+texture = SubResource("GradientTexture2D_gi7d2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

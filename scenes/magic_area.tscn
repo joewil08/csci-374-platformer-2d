@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxewlb5mfc2ne"]
+
+[ext_resource type="PackedScene" uid="uid://duwidiy7vbcgk" path="res://scenes/magic_3.tscn" id="1_le2ym"]
+[ext_resource type="Script" path="res://scripts/magic_area.gd" id="1_wq5ds"]
+[ext_resource type="PackedScene" uid="uid://bjysrrnmq1jto" path="res://scenes/magic_1.tscn" id="2_bbhek"]
+[ext_resource type="PackedScene" uid="uid://dbukb1ikhl5ot" path="res://scenes/magic_2.tscn" id="3_tayx1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_86mnj"]
+radius = 74.108
+
+[sub_resource type="Gradient" id="Gradient_xmh6k"]
+offsets = PackedFloat32Array(0.272727, 0.688312)
+colors = PackedColorArray(1, 0.0548207, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d4nyo"]
+gradient = SubResource("Gradient_xmh6k")
+width = 400
+height = 400
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_srvn1"]
+offsets = PackedFloat32Array(0.253247, 0.688312)
+colors = PackedColorArray(0.306943, 0, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7dtij"]
+gradient = SubResource("Gradient_srvn1")
+width = 400
+height = 400
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="MagicArea" type="Area2D"]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_wq5ds")
+
+[node name="Magic1" parent="." instance=ExtResource("2_bbhek")]
+
+[node name="Magic2" parent="." instance=ExtResource("3_tayx1")]
+
+[node name="Magic3" parent="." instance=ExtResource("1_le2ym")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_86mnj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="RedGlow" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_d4nyo")
+
+[node name="PurpleGlow" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_7dtij")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
