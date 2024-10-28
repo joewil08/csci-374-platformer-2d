@@ -1,6 +1,6 @@
 # 2D Platformer Game - Wizard Adventure
 
-A 2D platformer built using the Godot game engine. This project demonstrates core gameplay mechanics like character movement, enemy interactions, and item collection. This project was for Game Programming (CSCI-374).
+A 2D platformer built using the Godot game engine. This project demonstrates core gameplay mechanics like character movement, enemy interactions, and item collection. This project is made for Game Programming (CSCI-374).
 
 ## Features
 - **Classic Platformer Mechanics**: Walking, running, jumping, double-jumping, attacking, and platform-based obstacles.
